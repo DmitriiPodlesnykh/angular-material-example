@@ -1,0 +1,28 @@
+
+<mat-sidenav-container class="sidenav-container wrapper">
+  <mat-sidenav #sidenav autoFocus="false"  mode="side" [(opened)]="isSideBarOpen" class="sidenav">
+    <!--Logo zone-->
+    <a class="sidebar-brand" href="#">
+      <img src="images/logo.png" alt="Logo">
+      Bug_KiLLa
+    </a>
+    <!--SideBar -->
+    <div class="sidebar-content-inner">
+      <!--User block-->
+      <app-sidebaruser></app-sidebaruser>
+      <!--SideBar Navigation-->
+      <app-sidenav></app-sidenav>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content class="main">
+
+    <button mat-button class="menu-button" (click)="sidenav.toggle()">
+      <mat-icon [ngStyle]="{'color':'white'}">{{ isSideBarOpen ? 'menu_open' : 'menu' }}</mat-icon>
+    </button>
+
+   <app-mainnav></app-mainnav>
+
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
